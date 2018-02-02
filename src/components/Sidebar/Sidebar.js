@@ -1,31 +1,31 @@
-import React, { Component } from 'react';
-import './sidebar.css';
-import SidebarLine from '../sidebar-line';
-import Line from '../line'
-import NotificationManager from '../../managers/notification_manager'
+import React, { Component } from "react";
+import "./sidebar.css";
+import SidebarLine from "../sidebar-line";
+import Line from "../line";
+import NotificationManager from "../../managers/notification_manager";
 const { NotificationChest, FeedChest } = window;
 
 class Sidebar extends Component {
-  componentDidMount() {
-    NotificationManager.update()
-    NotificationChest.register(this)
-    FeedChest.register(this)
-  }
-  componentWillUnmount () {
-    FeedChest.unregister(this)
-    NotificationChest.unregister(this)
-  }
+    componentDidMount() {
+        NotificationManager.update();
+        NotificationChest.register(this);
+        FeedChest.register(this);
+    }
+    componentWillUnmount () {
+        FeedChest.unregister(this);
+        NotificationChest.unregister(this);
+    }
 
-  render () {
-    return (
-      <div className="col-xs-12 sidebar no-margin">
-        <div className="scrollbar2 col-xs-12" >
-          <div className="force-overflow">
+    render () {
+        return (
+            <div className="col-xs-12 sidebar no-margin">
+                <div className="scrollbar2 col-xs-12" >
+                    <div className="force-overflow">
     			<SidebarLine text="Inbox" icon="envelope-open-o" section="inbox" />
     			<SidebarLine text="Archived" icon="check" section="archived"/>
-          <SidebarLine text="Pending" icon="clock-o" section="pending"/>
+                        <SidebarLine text="Pending" icon="clock-o" section="pending"/>
     			<SidebarLine text="Important" icon="exclamation" section="important"/>
-          <Line />
+                        <Line />
     			<SidebarLine text="Releases" icon="tags" section="releases"/>
     			<SidebarLine text="Pull Requests" icon="code-fork" section="pull_requests"/>
     			<SidebarLine text="Mentions" icon="commenting-o" section="mentions"/>
@@ -33,9 +33,9 @@ class Sidebar extends Component {
 
       		</div>
       	</div>
-      </div>
-    )
-  }
+            </div>
+        );
+    }
 }
 
 export default Sidebar;

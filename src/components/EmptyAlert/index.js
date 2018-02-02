@@ -1,2 +1,2 @@
-import EmptyAlert from './EmptyAlert.js'
-export default EmptyAlert
+import EmptyAlert from "./EmptyAlert.js";
+export default EmptyAlert;

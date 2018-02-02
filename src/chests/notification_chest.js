@@ -1,10 +1,10 @@
 
-import Chest from './chest'
+import Chest from "./chest";
 
-const NotificationChest = new Chest('notifications', {
-  notificationsCount: {}
+const NotificationChest = new Chest("notifications", {
+    notificationsCount: {}
 });
 
-window.NotificationChest = NotificationChest
+window.NotificationChest = NotificationChest;
 
 export default NotificationChest;
