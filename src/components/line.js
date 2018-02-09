@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "./line.css";
 class Line extends Component {
-    render () {
+  render () {
 
-        return (
-    	<div className="col-xs-12">
-                <hr className="style14" />
-            </div> 	
-        );
-    }
+    return (
+      <div className="col-xs-12">
+        <hr className="style14" />
+      </div>
+    );
+  }
 }
 
 export default Line;

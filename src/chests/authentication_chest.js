@@ -2,8 +2,8 @@
 import Chest from "./chest";
 
 const AuthenticationChest = new Chest("authentication", {
-    isLogged: false,
-    user: { }
+  isLogged: false,
+  user: { }
 });
 
 window.AuthenticationChest = AuthenticationChest;

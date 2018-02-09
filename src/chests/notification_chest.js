@@ -2,7 +2,7 @@
 import Chest from "./chest";
 
 const NotificationChest = new Chest("notifications", {
-    notificationsCount: {}
+  notificationsCount: {}
 });
 
 window.NotificationChest = NotificationChest;

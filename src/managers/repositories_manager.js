@@ -1,15 +1,15 @@
-import ApiRoutes from '../api_routes'
+import ApiRoutes from "../api_routes";
 
 const { RepositoriesChest, f } = window;
 
 class RepositoriesManager {
   update = () => {
     f(ApiRoutes.repositories)
-        .then((content) => {
-          RepositoriesChest.setState({
-              repositories: content
-          })
-        })
+      .then((content) => {
+        RepositoriesChest.setState({
+          repositories: content
+        });
+      });
   }
 }
 

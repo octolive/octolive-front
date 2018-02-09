@@ -2,7 +2,7 @@
 import Chest from "./chest";
 
 const RepositoriesChest = new Chest("repositories", {
-    repositories: []
+  repositories: []
 });
 
 window.RepositoriesChest = RepositoriesChest;

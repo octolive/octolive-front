@@ -1,5 +1,5 @@
 
-import ApiRoutes from '../api_routes'
+import ApiRoutes from "../api_routes";
 
 const { AuthenticationChest, f } = window;
 
@@ -8,7 +8,7 @@ class AuthenticationManager {
     if(typeof(AuthenticationChest.state.local_token) === "undefined" || AuthenticationChest.state.local_token === "") {
       this.checkUrl();
     }
-    this.getProfileInfo()
+    this.getProfileInfo();
   }
 
   getProfileInfo = (force = false) => {
@@ -19,11 +19,11 @@ class AuthenticationManager {
           AuthenticationChest.setState({
             isLogged: true,
             user: content
-          })
+          });
         })
         .catch(() => {
           this.logOut();
-        })
+        });
     }
   }
 
@@ -31,8 +31,8 @@ class AuthenticationManager {
     fetch(ApiRoutes.sign_in_redirection)
       .then((response) => response.json())
       .then((content) => {
-        document.location.href = content.url
-      })
+        document.location.href = content.url;
+      });
   }
 
   logOut = () => {
@@ -40,16 +40,16 @@ class AuthenticationManager {
     AuthenticationChest.setState({
       isLogged:false,
       user: { }
-    })
+    });
     AuthenticationChest.callListeners();
   }
 
   checkUrl = () => {
-    if(!AuthenticationChest.state.isLogged && this.getQueryStringValue('token') !== "") {
+    if(!AuthenticationChest.state.isLogged && this.getQueryStringValue("token") !== "") {
       AuthenticationChest.setPersistedState({
-        local_token: this.getQueryStringValue('token')
-      })
-      document.location.href = "/"
+        local_token: this.getQueryStringValue("token")
+      });
+      document.location.href = "/";
     }
   }
 

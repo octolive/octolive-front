@@ -17,29 +17,29 @@ import { Route, Switch } from "react-router-dom";
 const AuthenticationChest = window.AuthenticationChest;
 
 class App extends Component {
-    componentDidMount() {
-        AuthenticationChest.register(this);
-        AuthenticationManager.checkLoginStatus();
-    }
+  componentDidMount() {
+    AuthenticationChest.register(this);
+    AuthenticationManager.checkLoginStatus();
+  }
 
-    render() {
-        return (
-            <div className="App">
-                <Navbar/>
-                {AuthenticationChest.state.isLogged ?
-                    <Switch>
-                        <Route exact path='/' component={Home} />
-                        <Route exact path='/repositories' component={Repositories} />
-                    </Switch>
-                    :
-                    <Switch>
-                        <Route exact path='/' component={Landing}/>
-                        <Route component={NotFound} />
-                    </Switch>
-                }
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="App">
+        <Navbar/>
+        {AuthenticationChest.state.isLogged ?
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/repositories' component={Repositories} />
+          </Switch>
+          :
+          <Switch>
+            <Route exact path='/' component={Landing}/>
+            <Route component={NotFound} />
+          </Switch>
+        }
+      </div>
+    );
+  }
 }
 
 export default App;

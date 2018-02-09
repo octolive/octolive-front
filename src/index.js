@@ -8,8 +8,8 @@ import { HashRouter } from "react-router-dom";
 import { browserHistory } from "react-router-dom";
 
 ReactDOM.render(
-    <HashRouter history={browserHistory}>
-        <App/>
-    </HashRouter>,
-    document.getElementById("root")
+  <HashRouter history={browserHistory}>
+    <App/>
+  </HashRouter>,
+  document.getElementById("root")
 );
