@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import map from 'lodash/map'
+import React, { Component } from "react";
+import map from "lodash/map";
 
 class Paginator extends Component {
   defaultProps = {
-    className: '',
+    className: "",
     items: null,
-    itemComponent: 'div',
+    itemComponent: "div",
     paddingFetch: 10,
     maxPage: 1,
     onNextPage: () => {},
-    emptyComponent: 'div',
-    loadingComponent: 'div'
+    emptyComponent: "div",
+    loadingComponent: "div"
   }
 
   state = { loadingNextPage: false, page: 1 }
@@ -19,8 +19,8 @@ class Paginator extends Component {
     if(this.state.page + 1 > this.props.maxPage) return;
     if(!this.state.loadingNextPage && e.target.scrollTop + 10 >= e.target.scrollHeight - e.target.clientHeight) {
       this.setState({ page: this.state.page + 1, loadingNextPage: true }, () => this.props.onNextPage().then(() => {
-        this.setState({ loadingNextPage: false })
-      }))
+        this.setState({ loadingNextPage: false });
+      }));
     }
   }
 
@@ -30,7 +30,7 @@ class Paginator extends Component {
         <div className={this.props.className}>
           <this.props.loadingComponent />
         </div>
-      )
+      );
     } else if(this.props.items.length > 0) {
       return (
         <div className={this.props.className} onScroll={this.checkNextPage}>
@@ -39,15 +39,15 @@ class Paginator extends Component {
             <div className="feed-notification col-xs-12">Cargando...</div>
           }
         </div>
-      )
+      );
     } else {
       return (
         <div className={this.props.className}>
           <this.props.emptyComponent />
         </div>
-      )
+      );
     }
   }
 }
 
-export default Paginator
+export default Paginator;

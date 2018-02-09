@@ -1,10 +1,10 @@
 
-import Chest from './chest'
+import Chest from "./chest";
 
-const RepositoriesChest = new Chest('repositories', {
+const RepositoriesChest = new Chest("repositories", {
   repositories: []
 });
 
-window.RepositoriesChest = RepositoriesChest
+window.RepositoriesChest = RepositoriesChest;
 
 export default RepositoriesChest;

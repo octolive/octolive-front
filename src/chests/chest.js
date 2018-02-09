@@ -3,7 +3,7 @@ class Chest {
     this.name = name;
     this.state = initialState;
     this.listeners = [];
-    this.setState(this.persistedState())
+    this.setState(this.persistedState());
     return this;
   }
 
@@ -14,8 +14,8 @@ class Chest {
 
   callListeners () {
     this.listeners.forEach((listener) => {
-      listener.setState({...this.state})
-    })
+      listener.setState({...this.state});
+    });
   }
 
   register (listener) {
@@ -23,23 +23,23 @@ class Chest {
   }
 
   unregister (listener) {
-    delete(this.listeners[this.listeners.indexOf(listener)])
+    delete(this.listeners[this.listeners.indexOf(listener)]);
   }
 
   setPersistedState (info = {}, callback = () => {}) {
     this.setState(info);
     var stateToPersist = this.persistedState();
     stateToPersist = Object.assign(stateToPersist, info);
-    localStorage.setItem(this.chestStorageName(), JSON.stringify(stateToPersist))
+    localStorage.setItem(this.chestStorageName(), JSON.stringify(stateToPersist));
     callback();
   }
 
   persistedState () {
-    return JSON.parse(localStorage.getItem(this.chestStorageName()) || "{}")
+    return JSON.parse(localStorage.getItem(this.chestStorageName()) || "{}");
   }
 
   clearPersistedState () {
-    localStorage.setItem(this.chestStorageName(), JSON.stringify({}))
+    localStorage.setItem(this.chestStorageName(), JSON.stringify({}));
   }
 
   chestStorageName () {
@@ -47,15 +47,15 @@ class Chest {
   }
 
   has (...args) {
-    return args.every(item => item in this.state)
+    return args.every(item => item in this.state);
   }
 
   get (...args) {
-    return args.reduce((result,item) => { result[item] = this.state[item]; return result; }, {})
+    return args.reduce((result,item) => { result[item] = this.state[item]; return result; }, {});
   }
 
   clear (...args) {
-    return args.forEach((key) => {delete(this.state[key])})
+    return args.forEach((key) => {delete(this.state[key]);});
   }
 }
 

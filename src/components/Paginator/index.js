@@ -1,2 +1,2 @@
-import Paginator from './Paginator.js'
-export default Paginator
+import Paginator from "./Paginator.js";
+export default Paginator;
