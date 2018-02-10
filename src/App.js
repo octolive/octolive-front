@@ -7,7 +7,7 @@ import "./chests/feed_chest";
 import "./chests/repositories_chest";
 import "./helpers/requests";
 import Navbar from "./components/navbar.js";
-import AuthenticationManager from "./managers/authentication_manager";
+import AuthenticationManager from "./managers/authenticationManager";
 import Repositories from "./components/repositories.js";
 import Home from "./components/home";
 import Landing from "./components/landing";

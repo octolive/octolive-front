@@ -49,7 +49,6 @@ class AuthenticationManager {
       AuthenticationChest.setPersistedState({
         local_token: this.getQueryStringValue("token")
       });
-      document.location.href = "/";
     }
   }
 
