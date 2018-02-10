@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AuthenticationChest from "../chests/authentication_chest";
-import AuthenticationManager from "../managers/authentication_manager";
+import AuthenticationManager from "../managers/authenticationManager";
 import NotificationManager from "../managers/notification_manager";
 const { NotificationChest } = window;
 

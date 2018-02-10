@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthenticationManager from "../managers/authentication_manager";
+import AuthenticationManager from "../managers/authenticationManager";
 import "./landing.css";
 
 import "font-awesome/css/font-awesome.min.css";
